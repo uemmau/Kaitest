@@ -1,0 +1,89 @@
+/* ===================== FOOTER ===================== */
+.footer {
+  background: var(--green-dark);
+  padding: 3.5rem 2rem 2rem;
+  border-top: 1px solid rgba(245, 166, 35, 0.12);
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.4rem;
+  letter-spacing: 0.14em;
+  color: var(--amber);
+}
+
+.footer-tagline {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: -0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--amber);
+}
+
+.footer-note {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.7;
+  max-width: 560px;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-note strong {
+  color: var(--amber);
+  font-weight: 700;
+}
+
+.footer-divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--amber));
+  border-radius: 2px;
+}
+
+.footer-copy {
+  font-size: 0.74rem;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-copy a {
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.2s;
+}
+
+.footer-copy a:hover {
+  color: var(--amber);
+}
