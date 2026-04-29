@@ -21,6 +21,7 @@ export default function Navbar() {
 
   return (
     <>
+    <div>Testeando git</div>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <a href="#inicio" className="navbar-logo" onClick={close}>
           <img src="/logo.png" alt="Pumakawa logo" />
