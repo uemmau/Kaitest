@@ -18,8 +18,6 @@ export default function Navbar() {
   }, [])
 
   const close = () => setOpen(false)
-  console.log("Testeando git")
-  console.log("A lo mejor ahora si se actualiza")
 
   return (
     <>
