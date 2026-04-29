@@ -30,6 +30,7 @@ export default function ReportForm() {
   const [loading, setLoading]     = useState(false)
   const [errors, setErrors]       = useState({})
   const fileRef = useRef()
+  const cameraRef = useRef()
 
   const handleChange = e => {
     const { name, value } = e.target
@@ -146,35 +147,69 @@ export default function ReportForm() {
             </label>
             <div
               className={`upload-zone ${preview ? 'has-preview' : ''} ${errors.photo ? 'upload-error' : ''}`}
-              onClick={() => fileRef.current.click()}
               onDrop={handleDrop}
               onDragOver={e => e.preventDefault()}
-              role="button"
-              tabIndex={0}
-              onKeyDown={e => e.key === 'Enter' && fileRef.current.click()}
             >
               {preview ? (
                 <>
                   <img src={preview} alt="Preview" className="photo-preview" />
                   <div className="upload-overlay">
-                    <span>📷 Cambiar foto</span>
+                    <button type="button" className="overlay-btn" onClick={() => fileRef.current.click()}>
+                      📷 Cambiar
+                    </button>
+                    <button type="button" className="overlay-btn remove" onClick={() => { setPhoto(null); setPreview(null); }}>
+                      🗑️ Quitar
+                    </button>
                   </div>
                 </>
               ) : (
                 <div className="upload-placeholder">
-                  <span className="upload-icon">📷</span>
-                  <strong>Arrastrá tu foto aquí</strong>
-                  <span>o hacé clic para seleccionar</span>
+                  <div className="photo-options">
+                    <div 
+                      className="photo-option-card" 
+                      onClick={() => fileRef.current.click()}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={e => e.key === 'Enter' && fileRef.current.click()}
+                    >
+                      <span className="photo-option-icon">📁</span>
+                      <strong>Cargar foto</strong>
+                      <span>Desde tu galería</span>
+                    </div>
+
+                    <div 
+                      className="photo-option-card highlight" 
+                      onClick={() => cameraRef.current.click()}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={e => e.key === 'Enter' && cameraRef.current.click()}
+                    >
+                      <span className="photo-option-icon">📸</span>
+                      <strong>Sacar foto</strong>
+                      <span>Usar cámara</span>
+                    </div>
+                  </div>
                   <span className="upload-hint">JPG, PNG, WEBP · máx. 10 MB</span>
                 </div>
               )}
+              
+              {/* Hidden inputs */}
               <input
                 ref={fileRef}
                 type="file"
                 accept="image/*"
                 onChange={handlePhoto}
                 style={{ display: 'none' }}
-                id="photo-input"
+                id="photo-upload"
+              />
+              <input
+                ref={cameraRef}
+                type="file"
+                accept="image/*"
+                capture="environment"
+                onChange={handlePhoto}
+                style={{ display: 'none' }}
+                id="photo-camera"
               />
             </div>
             {errors.photo && <span className="form-error">{errors.photo}</span>}
