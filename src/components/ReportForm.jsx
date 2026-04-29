@@ -189,7 +189,7 @@ export default function ReportForm() {
                       <span>Usar cámara</span>
                     </div>
                   </div>
-                  <span className="upload-hint">JPG, PNG, WEBP · máx. 10 MB</span>
+                  <span className="upload-hint">JPG, PNG, WEBP · máx. 100 MB</span>
                 </div>
               )}
               
