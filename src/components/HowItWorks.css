@@ -36,11 +36,11 @@
 
 .section-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(2.4rem, 8vw, 3.2rem);
   font-weight: 400;
   letter-spacing: 0.04em;
   color: var(--white);
-  line-height: 1.1;
+  line-height: 1.05;
   margin-bottom: 1rem;
 }
 
@@ -162,9 +162,26 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .how {
+    padding: 4rem 1.5rem;
+  }
+
+  .section-head {
+    margin-bottom: 2.5rem;
+  }
+
   .steps-grid,
   .types-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .step-card, .type-card {
+    padding: 1.5rem;
+  }
+
+  .step-number {
+    font-size: 3.5rem;
   }
 }
 

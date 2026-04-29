@@ -247,8 +247,56 @@
 }
 
 /* Responsive */
+/* Responsive Improvements */
+@media (max-width: 640px) {
+  .hero-title {
+    gap: 12vw;
+    font-size: clamp(3.5rem, 14vw, 5rem);
+  }
+  
+  .hero-sub {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 3rem;
+  }
+
+  .btn-primary, .btn-ghost {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
 @media (max-width: 480px) {
-  .hero-stats { gap: 1rem; padding: 1.2rem 1rem; }
+  .hero-stats { 
+    gap: 1.25rem 0.75rem; 
+    padding: 1.5rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
   .hstat-divider { display: none; }
-  .hero-title { font-size: 5rem; }
+  
+  .hstat:last-child {
+    grid-column: span 2;
+  }
+
+  .hero-title { 
+    gap: 8vw;
+    font-size: 4rem; 
+  }
+
+  .hero-badge {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    padding: 0.35rem 1rem;
+  }
 }
