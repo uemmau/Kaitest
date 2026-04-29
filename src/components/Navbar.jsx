@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react'
 import './Navbar.css'
 
 const NAV_LINKS = [
-  { href: '#inicio',   label: 'Inicio' },
-  { href: '#como',     label: 'Cómo funciona' },
+  { href: '#inicio', label: 'Inicio' },
+  { href: '#como', label: 'Cómo funciona' },
   { href: '#denuncia', label: 'Hacer denuncia', cta: true },
 ]
 
 export default function Navbar() {
-  const [open, setOpen]       = useState(false)
+  const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -18,10 +18,11 @@ export default function Navbar() {
   }, [])
 
   const close = () => setOpen(false)
+  console.log("Testeando git")
+  console.log("A lo mejor ahora si se actualiza")
 
   return (
     <>
-    <div>Testeando git</div>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <a href="#inicio" className="navbar-logo" onClick={close}>
           <img src="/logo.png" alt="Pumakawa logo" />
